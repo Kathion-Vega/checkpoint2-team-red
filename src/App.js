@@ -1,4 +1,4 @@
-mport React, { Component } from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch, Redirect } from 'react-router-dom';
 import store from './state/store/store';
 import { Provider } from 'react-redux';
@@ -13,7 +13,7 @@ import ListaDependants from './components/Home/Dependants/ListaDependants';
 import BusquedaDependants from './components/Home/Dependants/BusquedaDependant';
 import BusquedaUserDependant from './components/Home/Dependants/BusquedaUserDependant';
 
-import AppBar from '@material-ui/core/AppBar';
+import {AppBar, Typography, Card} from '@material-ui/core';
 import './App.scss';
 
 class AppRed extends Component {
@@ -22,22 +22,44 @@ class AppRed extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <div className="app">
-            <AppBar />
-            <Redirect from="/" to="/Home" />
+            <AppBar>
+              <Typography variant="h6" color="inherit">
+                RED
+              </Typography>  
+              <Switch>
+                <Route path="/Home" component={ Home } />
+                <Route path="/UsersMenu" component={ UsersMenu } />
+                {/* <Route path="/ListaUsers" render={() => <ListaUsers />} />
+
+                <Route path="/AddUsers" render={() => <AddUsers />} />
+                <Route path="/BusquedaUser" render={() => <BusquedaUser />} /> */}
+                <Route path="/DependantsMenu" component={ DependantsMenu } />
+              
+                {/* <Route path="/ListaDependants" render={() => <ListaDependants />} />
+                <Route path="/AddDependant" render={() => <AddDependant />} />
+                <Route path="/BusquedaDependants" render={() => <BusquedaDependants />} />
+                <Route path="/BusquedaUserDependant" render={() => <BusquedaUserDependant />} /> */}
+                <Redirect from="/" to="/Home" />
+              </Switch>
+            </AppBar> 
+            <Card>
             <Switch>
-              <Route path="/Home" component={ Home } />
-              <Route path="/UsersMenu" component={ UsersMenu } />
-              <Route exact path="/ListaUsers" render={() => <ListaUsers />} />
-              <Route exact path="/AddUsers" render={() => <AddUsers />} />
-              <Route exact path="/BusquedaUser" render={() => <BusquedaUser />} />
-              <Route path="/DependantsMenu" component={ DependantsMenu } />
+                bbbbbbb
+              
+                <Route path="/ListaUsers" render={() => <ListaUsers />} />
+
+                <Route path="/AddUsers" render={() => <AddUsers />} />
+                <Route path="/BusquedaUser" render={() => <BusquedaUser />} />
             
-              <Route exact path="/ListaDependants" render={() => <ListaDependants />} />
-              <Route exact path="/AddDependant" render={() => <AddDependant />} />
-              <Route exact path="/BusquedaDependants" render={() => <BusquedaDependants />} />
-              <Route exact path="/BusquedaUserDependant" render={() => <BusquedaUserDependant />} />
-              <Redirect from="/" to="/Home" />
-            </Switch>
+              
+                <Route path="/ListaDependants" render={() => <ListaDependants />} />
+                <Route path="/AddDependant" render={() => <AddDependant />} />
+                <Route path="/BusquedaDependants" render={() => <BusquedaDependants />} />
+                <Route path="/BusquedaUserDependant" render={() => <BusquedaUserDependant />} />
+              
+              </Switch>
+
+            </Card>
           </div>
         </BrowserRouter> 
       </Provider>

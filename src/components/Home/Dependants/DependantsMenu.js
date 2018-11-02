@@ -19,19 +19,20 @@ class DependantsMenu extends Component{
     
     render() {
         const { anchorEl } = this.state;
+        
         return (
             <div className="dependants">
                 <label htmlFor="contained-button-file">     
-                    <Button eventKey={2} variant="contained" component="span" aria-owns={anchorEl ? 'simple-menu' : undefined} aria-haspopup="true" onClick={this.handleClick}>
+                    <Button  variant="contained" component="span" aria-owns={anchorEl ? 'simple-menu' : undefined} aria-haspopup="true" onClick={this.handleClick}>
                         Dependientes
                     </Button>
                 </label>            
                 <Menu  id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
-                    <MenuItem eventKey={2.1} ><Link to = "/DependantsMenu/ListaDependants">Lista de Dependientes</Link></MenuItem>
-                    <MenuItem eventKey={2.2}><Link to = "/DependantsMenu/BusquedaDependant">Busqueda de Dependiente</Link></MenuItem> 
-                    <MenuItem  eventKey={2.3}><Link to = "/DependantsMenu/AddDependant">Agregar Dependiente</Link></MenuItem>
-                    <MenuItem  eventKey={2.4}><Link to = "/DependantsMenu/BusquedaUserDependant">Buscar Usuario del Dependiente</Link></MenuItem>
-                    <MenuItem eventKey={2.5} onClick={this.handleClose}><Link to = "/">Regresar</Link></MenuItem>
+                    <MenuItem><Link to = "/DependantsMenu/ListaDependants">Lista de Dependientes</Link></MenuItem>
+                    <MenuItem><Link to = "/DependantsMenu/BusquedaDependant">Busqueda de Dependiente</Link></MenuItem> 
+                    <MenuItem><Link to = "/DependantsMenu/AddDependant">Agregar Dependiente</Link></MenuItem>
+                    <MenuItem><Link to = "/DependantsMenu/BusquedaUserDependant">Buscar Usuario del Dependiente</Link></MenuItem>
+                    <MenuItem onClick={this.handleClose}><Link to = "/">Regresar</Link></MenuItem>
                 </Menu>                                    
             </div>
         )
