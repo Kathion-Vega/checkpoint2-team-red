@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button,  Typography,  Toolbar, AppBar} from '@material-ui/core';
+import { Button,  Typography, MenuItem, Table} from '@material-ui/core';
 import { connect } from 'react-redux';
 import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
+// import UserTable from './UserTable/UserTable';
 
 class ListaUsers extends Component{
     handleClickGetUsers = () => {
@@ -10,28 +11,23 @@ class ListaUsers extends Component{
     }
     render () {
         return (
-            <div className="ListaUsuarios">
-                <AppBar position="static" color="success">
-                    <Toolbar>
-                        <Typography variant="h6" color="inherit">
-                            RED
-                        </Typography>
-                        <h6>Lista de Usuarios</h6>    
-                        <Button><Link to="/Home">Menu Principal</Link></Button>
+            <div>
+                <div className="ListaUsuarios">
+                    <Button>
+                        <Typography variant="h6" color="inherit"><Link to = "/UsersMenu/ListaUsers">
+                            Lista de Usuarios</Link> 
+                        </Typography>   
+                    </Button>                       
+                </div>
+                                  
+                {this.props.loading ? <h1>Cargando...</h1> : null}    
                         
-                    </Toolbar> 
-                </AppBar>        
-           
-                );
-            }
-        }
+                    <div>
+                        <Table>NO entiendo porque esto aparece en este espacio y no en el link de UserTable?????
+                            
+                        </Table>
+                    </div>
                 
-        {this.props.loading ? <h1>Cargando...</h1> : null}
-                
-                {/* <Button onClick={this.handleClickUsers}>Cargar usuarios</Button>
-                <Table></Table>
-                {this.props.loading ? <h1>Cargando...</h1> : null}
-                <Link to="/Home">Menu Principal</Link> */}
             </div>
         )
     }    
