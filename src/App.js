@@ -13,6 +13,9 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <AppBar><NavBar></NavBar></AppBar>      
+          <Redirect
+            from="/"
+            to="/Home" />
           <Switch>
             <Route
               path="/Home"
@@ -21,21 +24,15 @@ class App extends Component {
               exact
               path="/UsersMenu"
               render={() => <UsersMenu />} />
-            <Route  component={UsersMenu} />
+            
             
             <Route
               exact
               path="/DependantsMenu"
               render={() => <DependantsMenu />} />
-            <Route component={DependantsMenu} />
-
-           
-        
+            <Route component={Home} />
           </Switch>
-
         </div>
-    
-
       </BrowserRouter>
     );
   }
