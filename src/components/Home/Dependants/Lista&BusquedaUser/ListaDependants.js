@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import  { Button, Table } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
-import UserTable from './UserTable/UserTable';
+import { fetchUsers } from './../../../state/actions/Users/DependantsActions/DependantsActions';
+import DependantsTable from './../DependantsTable';
 
-class ListaUsers extends Component{
+class ListaDependants extends Component{
     handleClickGetUsers = () => {
         this.props.fetchUsers();
     }
@@ -12,7 +12,7 @@ class ListaUsers extends Component{
         return (
             <div>
                 <Button onClick={this.handleClickGetUsers}>Cargar usuarios</Button>
-                <Table><UserTable></UserTable></Table>                  
+                <Table><DependantsTable></DependantsTable></Table>                  
                 {this.props.loading ? <h1>Cargando...</h1> : null}    
                 
             </div>
@@ -33,4 +33,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapDispatchToProps, mapStateToProps)(ListaUsers);
+export default connect(mapDispatchToProps, mapStateToProps)(ListaDependants);
