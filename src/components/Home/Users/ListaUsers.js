@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { Button,  Typography, MenuItem, Table} from '@material-ui/core';
+import  { Button, Table } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
-// import UserTable from './UserTable/UserTable';
+import UserTable from './UserTable/UserTable';
 
 class ListaUsers extends Component{
     handleClickGetUsers = () => {
@@ -12,21 +11,9 @@ class ListaUsers extends Component{
     render () {
         return (
             <div>
-                <div className="ListaUsuarios">
-                    <Button>
-                        <Typography variant="h6" color="inherit"><Link to = "/UsersMenu/ListaUsers">
-                            Lista de Usuarios</Link> 
-                        </Typography>   
-                    </Button>                       
-                </div>
-                                  
+                <Button onClick={this.handleClickGetUsers}>Cargar usuarios</Button>
+                <Table><UserTable></UserTable></Table>                  
                 {this.props.loading ? <h1>Cargando...</h1> : null}    
-                        
-                    <div>
-                        <Table>NO entiendo porque esto aparece en este espacio y no en el link de UserTable?????
-                            
-                        </Table>
-                    </div>
                 
             </div>
         )
@@ -35,7 +22,7 @@ class ListaUsers extends Component{
 
 const mapDispatchToProps = () => {
     return {
-        fetchUsers
+        fetchUsers,
     }
 }
 
