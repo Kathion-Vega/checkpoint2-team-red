@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import  { Button, Table } from '@material-ui/core';
+import  { Button} from '@material-ui/core';
 import { connect } from 'react-redux';
 import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
 import UserTable from './UserTable/UserTable';
+import  { Link }  from 'react-router-dom';
 
 class ListaUsers extends Component{
+
     handleClickGetUsers = () => {
         this.props.fetchUsers();
     }
+
     render () {
         return (
-            <div>
-                <Button onClick={this.handleClickGetUsers}>Cargar usuarios</Button>
-                <Table><UserTable></UserTable></Table>                  
-                {this.props.loading ? <h1>Cargando...</h1> : null}    
+            <div className="lista_conteiner">
                 
+                <Button onClick={this.handleClickGetUsers}>Cargar usuarios</Button>                  
+                 <UserTable></UserTable>   
+                <div>
+                   
+                    <Link to="/UsersMenu/ListaUsers" key={1.1} className="link">Lista de Usuarios</Link>
+                </div>
+                {this.props.loading ? <h1>Cargando...</h1> : null}
             </div>
         )
     }    
@@ -23,7 +30,7 @@ class ListaUsers extends Component{
 const mapDispatchToProps = () => {
     return {
         fetchUsers,
-    }
+    };
 }
 
 
