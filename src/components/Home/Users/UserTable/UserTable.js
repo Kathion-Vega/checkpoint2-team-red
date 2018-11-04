@@ -1,44 +1,47 @@
-// import React, { Component } from 'react';
-// import { Table } from '@material-ui/core/Table';
-// import { connect } from 'react-redux';
+import React, { Component } from 'react';
+import { Table } from '@material-ui/core/Table';
+import { connect } from 'react-redux';
 
-// class UsersTable extends Component{
-//     render() {
-//         return (
-//             <Table dark>
-//                 <thead>
-//                     <tr>
-//                         <th>ID</th>
-//                         <th>Nombre</th>
-//                         <th>Apellido</th>
-//                         <th>Edad</th>
-//                     </tr>
-//                 </thead>
-//                 <tbody>
-//                     {this.props.users.map(user => {
-//                         return (
-//                             <tr key={user.id}>
-//                                 <td>{user.id}</td>
-//                                 <td>{user.first_name}</td>
-//                                 <td>{user.last_name}</td>
-//                                 <td>{user.edad}</td>
-//                             </tr>
-//                         )
-//                     })}
-//                     {/* {users} */}
-//                 </tbody>
-//             </Table>
-//         )
-//     }
-// }
+class UsersTable extends Component {
+    render() {
+        let users = this.props.users.map((user) => {
+            return (
+                <tr key={user.id}>
+                    <td>{user.id}</td>
+                    <td>{user.first_name}</td>
+                    <td>{user.last_name}</td>
+                    <td>{user.edad}</td>
+                </tr>
+            )
+        })
+        return (
+            <Table dark>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Edad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   {users}
+                </tbody>
+            </Table>
+        )
+    }
+}
 
-// const mapStateToProps = (state) => {
-//     return {
-//         users: state.users
-//     }
-// }
+const mapStateToProps = (state) => {
+    return {
+        users: state.users
+    }
+}
 
-// export default connect(mapStateToProps)(UsersTable);
+
+
+
+export default connect(mapStateToProps)(UsersTable);
 
 
 
