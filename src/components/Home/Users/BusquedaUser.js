@@ -1,50 +1,42 @@
 import React, { Component } from 'react';
 import  { Link }  from 'react-router-dom';
-import  {AppBar, Toolbar, InputBase, Typography, IconButton, Icon   } from '@material-ui/core';
-import { connect } from 'react-redux';
-import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
+import  { Card, AppBar, Toolbar, InputBase, Typography, IconButton, Icon, Button, Paper   } from '@material-ui/core';
+import {  connect } from 'react-redux';
+import { addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../state/actions/Users/UsersActions/UserOnlyActions';
+import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions'
 import NavBar from '../../../NavBar';
+import './BusquedaUser.scss';
+
 
 
 class BusquedaUser extends Component {
-    state = {
-        todoInput: ""
-    }
-
-    handleInputChange = (e) => {
-        this.setState({ todoInput: e.target.value });
-    }
-
-    
-    handleAddTodo = () => {
-        this.props.addTodo(this.state.userInput);
-        this.setState({ todoInput: "" });
-    }
-
 
     render() {
         return (
             <div className='busqueda_user'>
-                <NavBar />
-                    <Link to="/UsersMenu" key={1} className="link">Menu de Usuarios</Link>    
-                    <Link to="/DependantsMenu" key={2} className="link">Menu de Dependientes</Link>
-                <AppBar position="'relative'">
+                <AppBar  position="static" color="success">
+                    <NavBar />
+                    <Link to="/Home" className="link"><Button>Home</Button></Link>    
+   
                     <Toolbar>
                         <Typography className='title' variant="h6" color="inherit" noWrap>
                             RED - Busqueda de Usuarios
                         </Typography>
                         <div className=''>
                             <div className=''>
-                                <IconButton onClick={this.handleAddTodo}>
+                                <IconButton onClick={this.handleAddUser}>
                                     <Icon>
-                                        add
+                                        searchicon
                                     </Icon>
                                 </IconButton>
                             </div>
-                            <InputBase value={this.state.userInput} onChange={(e)=>this.handleInputChange(e)} placeholder="Search…"/>
+                            <InputBase placeholder="Search…"/>
                         </div>
                     </Toolbar>    
-                </AppBar>    
+                </AppBar>
+                <Card>
+                    Resultado de la Busqueda
+                </Card>    
             </div>
         )
     }
@@ -53,13 +45,18 @@ class BusquedaUser extends Component {
 const mapDispatchToProps = (dispatch) => {
     return {
         fetchUsers,
+        addOnlyUser,
+        findOnlyUser,
+        editOnlyUser,
+        deleteOnlyUser
     }    
 }
 
 
 const mapStateToProps = (state) => {
     return {
-        users: state.users
+        users: state.users,
+        userOnly: state.userOnly
     }
 }
 

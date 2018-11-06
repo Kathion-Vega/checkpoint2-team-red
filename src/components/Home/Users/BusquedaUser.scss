@@ -1,0 +1,20 @@
+.busqueda_user {
+
+    searchIcon {
+        width: 9;
+        height: 100%;
+        position: absolute;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+   InputBase {
+        color: darkgray ;
+        width: 100%;
+        border-color: black;
+        
+   }    
+}

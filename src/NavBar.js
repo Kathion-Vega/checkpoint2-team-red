@@ -7,7 +7,7 @@ class NavBar extends Component {
   render() {
     return (
       <div>
-        <Menu  id="simple-menu">
+        <Menu>
           <MenuItem >  
             <Link to="/UsersMenu" key={1} className="link">Menu de Usuarios</Link>
           </MenuItem>

@@ -4,12 +4,13 @@ import { connect } from 'react-redux';
 
 class UsersTable extends Component {
     render() {
-        let users = this.props.users.map((user) => {
+        let user = this.props.users.map((user) => {
             return (
                 <tr key={user.id}>
                     <td>{user.id}</td>
-                    <td>{user.first_name}</td>
-                    <td>{user.last_name}</td>
+                    <td>{user.nombre}</td>
+                    <td>{user.paterno}</td>
+                    <td>{user.materno}</td>
                     <td>{user.edad}</td>
                 </tr>
             )
@@ -20,12 +21,13 @@ class UsersTable extends Component {
                     <tr>
                         <th>ID</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
+                        <th>Apellido Paterno</th>
+                        <th>Apellido Materno</th>
                         <th>Edad</th>
                     </tr>
                 </thead>
                 <tbody>
-                   {users}
+                   {user}
                 </tbody>
             </Table>
         )
