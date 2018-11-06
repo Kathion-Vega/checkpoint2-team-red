@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  { Button, Table } from '@material-ui/core';
 import { connect } from 'react-redux';
-import { fetchUsers } from './../../../state/actions/Users/DependantsActions/DependantsActions';
+import { fetchDependants } from './../../../../state/actions/Dependants/DependantsActions/DependantsActions';
 import DependantsTable from './../DependantsTable';
 
 class ListaDependants extends Component{
@@ -11,7 +11,7 @@ class ListaDependants extends Component{
     render () {
         return (
             <div>
-                <Button onClick={this.handleClickGetUsers}>Cargar usuarios</Button>
+                <Button onClick={this.handleClickGetUsers}>Carga dependientes</Button>
                 <Table><DependantsTable></DependantsTable></Table>                  
                 {this.props.loading ? <h1>Cargando...</h1> : null}    
                 
@@ -22,7 +22,7 @@ class ListaDependants extends Component{
 
 const mapDispatchToProps = () => {
     return {
-        fetchUsers,
+        fetchDependants,
     }
 }
 

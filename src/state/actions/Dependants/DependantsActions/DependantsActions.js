@@ -9,7 +9,7 @@ const FetchDependants = () => {
     return async (dispatch) => {
         dispatch(LoadingDependants())
         try {
-            const response = await axios.get ( 'http://checkpoint2-grupo3.herokuapp.com/api/dependientes/nombre_equipo');
+            const response = await axios.get ( 'http://checkpoint2-grupo3.herokuapp.com/api/dependientes/rojo');
             dispatch(SuccessFetchingDependants(response.data.data));
         }
         catch (error) {
