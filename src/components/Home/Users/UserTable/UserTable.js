@@ -1,34 +1,34 @@
 import React, { Component } from 'react';
-import { Table } from '@material-ui/core/Table';
+import { Table, TableHead, TableCell, TableBody, TableRow } from '@material-ui/core/';
 import { connect } from 'react-redux';
+
 
 class UsersTable extends Component {
     render() {
-        let user = this.props.users.map((user) => {
-            return (
-                <tr key={user.id}>
-                    <td>{user.id}</td>
-                    <td>{user.nombre}</td>
-                    <td>{user.paterno}</td>
-                    <td>{user.materno}</td>
-                    <td>{user.edad}</td>
-                </tr>
-            )
-        })
         return (
             <Table dark>
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Apellido Paterno</th>
-                        <th>Apellido Materno</th>
-                        <th>Edad</th>
-                    </tr>
-                </thead>
-                <tbody>
-                   {user}
-                </tbody>
+                <TableHead>
+                    <TableRow>
+                        <TableCell>ID</TableCell>
+                        <TableCell>Nombre</TableCell>
+                        <TableCell>Apellido Paterno</TableCell>
+                        <TableCell>Apellido Materno</TableCell>
+                        <TableCell>Edad</TableCell>
+                    </TableRow>
+                </TableHead>
+                <TableBody>
+                    {this.props.users.map(user => {
+                        return (
+                            <TableRow key={user.id}>
+                                <TableCell>{user.id}</TableCell>
+                                <TableCell>{user.nombre}</TableCell>
+                                <TableCell>{user.apellidos.paterno}</TableCell>
+                                <TableCell>{user.apellidos.materno}</TableCell>
+                                <TableCell>{user.edad}</TableCell>
+                            </TableRow>
+                        )
+                    }).forEach()}
+                </TableBody>
             </Table>
         )
     }
@@ -36,7 +36,8 @@ class UsersTable extends Component {
 
 const mapStateToProps = (state) => {
     return {
-        users: state.users
+        users: state.users,
+        user: state.user
     }
 }
 
@@ -72,10 +73,10 @@ export default connect(mapStateToProps)(UsersTable);
 //               </TableRow>    
 //             </TableHead>
 //             <TableBody>
-//               {this.props.users.map(user => {
+//               {TableCellis.props.users.map(user => {
 //                 return (
 //                   <TableRow className="row" key={user.id}>
-//                     <TableCell component="th" scope="row">{user.id}</TableCell>
+//                     <TableCell component="TableCell" scope="row">{user.id}</TableCell>
 //                     <TableCell>{user.nombre}</TableCell>
 //                     <TableCell>{user.paterno}</TableCell>
 //                     <TableCell>{user.materno}</TableCell>

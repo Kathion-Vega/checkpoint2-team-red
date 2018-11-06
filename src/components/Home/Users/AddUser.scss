@@ -1,0 +1,20 @@
+.container {
+      display: flex;
+      flex-wrap: wrap;
+
+    Button {
+        width: 5%;
+    }
+
+    .textField {
+      
+      width: 200%;
+      padding: 10px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      
+    }
+}

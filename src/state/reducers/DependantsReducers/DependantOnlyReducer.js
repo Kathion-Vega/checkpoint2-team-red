@@ -17,10 +17,10 @@ const DependantOnlyReducer = ( state = initialState, action) => {
 
         case ADD_DEPENDANT:
             let newDependant = {
-                nameCompleto: action.nameCompleto,
+                nombre_completo: action.nombre_completo,
                 dependencia: action.dependencia,
                 edad: action.edad,
-                user: action.id.user 
+                usuario: action.id.user 
             }
             return {
                 ...state,
@@ -37,22 +37,23 @@ const DependantOnlyReducer = ( state = initialState, action) => {
         case FIND_DEPENDANT:
             let busquedaDependant = state.dependants.slice();
             let resultado = busquedaDependant.find((item) => {
-                if (item.id == action.id) {
+                if (item.id === action.id) {
                     item.done = !item.done;
                     return true;
-                } else if (item.nameCompleto == action.nameCompleto) {
+                } else if (item.nombre_completo === action.nombre_completo) {
                     item.done = !item.done;
                     return true;
-                } else if (item.dependencia == action.dependencia) {
+                } else if (item.dependencia === action.dependencia) {
                     item.done = !item.done;
                     return true;
-                } else if (item.edad == action.edad) {
+                } else if (item.edad === action.edad) {
                     item.done = !item.done;
                     return true;
-                }  else if (item.id.user == action.id.user) {
+                }  else if (item.id.user === action.id.user) {
                     item.done = !item.done;
                     return true;
-                } 
+                }
+                return null; 
             });
             busquedaDependant[resultado] = resultado;
             return {
@@ -79,14 +80,14 @@ const DependantOnlyReducer = ( state = initialState, action) => {
 
             case EDIT_DEPENDANT: 
                 let cambios = {
-                    nameCompleto: action.Completo,
+                    nombre_completo: action.Completo,
                     dependencia: action.dependencia,
                     edad: action.edad,
                     users: action.id.users
                 }
                 cambios = state.dependants.slice();
                 for (let item of cambios) {
-                    if (item.id.user == !item.id.user || item.nameCompleto == !item.nameCompleto || item.dependencia == !item.dependencia ||item.edad == !item.edad) {
+                    if (item.id.user === !item.id.user || item.nombre_completo === !item.nombre_completo || item.dependencia === !item.dependencia ||item.edad === !item.edad) {
                         item.done =!it.done;
                         return true;
                     }

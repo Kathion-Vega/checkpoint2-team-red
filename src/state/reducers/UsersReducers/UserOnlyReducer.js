@@ -18,8 +18,8 @@ const UserOnlyReducer = ( state = initialState, action) => {
             let newUser = {
                 id: state.users.lenght + 1,
                 nombre: action.nombre,
-                paterno: action.paterno,
-                materno: action.materno,
+                paterno: action.apellidos.paterno,
+                materno: action.apellidos.materno,
                 edad: action.edad 
             }
             return {
@@ -37,23 +37,25 @@ const UserOnlyReducer = ( state = initialState, action) => {
         case FIND_USER:
             let busquedaUsers = state.users.slice();
             let resultado = busquedaUsers.find((item) => {
-                if (item.id == action.id) {
+                if (item.id === action.id) {
                     item.done = !item.done;
                     return true;
-                } else if (item.nombre == action.nombre) {
+                } else if (item.nombre === action.nombre) {
                     item.done = !item.done;
                     return true;
-                } else if (item.paterno == action.paterno) {
+                } else if (item.apellidos.paterno === action.apellidos.paterno) {
                     item.done = !item.done;
                     return true;
-                } else if (item.materno == action.materno) {
+                } else if (item.apellidos.materno === action.apellidos.materno) {
                     item.done = !item.done;
                     return true;
-                }  else if (item.edad == action.edad) {
+                }  else if (item.edad === action.edad) {
                     item.done = !item.done;
                     return true;
                 } 
+                return null; 
             });
+
             busquedaUsers[resultado] = resultado;
             return {
                 ...state,
@@ -81,13 +83,13 @@ const UserOnlyReducer = ( state = initialState, action) => {
                 let cambios = {
                     id: action.id,
                     nombrename: action.nombre,
-                    paterno: action.paterno,
-                    materno: action.materno,
+                    paterno: action.apellido.paterno,
+                    materno: action.apellido.materno,
                     edad: action.edad,
                 }
                 cambios = state.users.slice();
                 for (let item of cambios) {
-                    if (item.id == !item.done || item.nombre == !item.nombre || item.paterno == !item.paterno ||  item.materno == !item.materno ||item.edad == !item.edad) {
+                    if (item.id === !item.done || item.nombre === !item.nombre || item.apellido.paterno === !item.apellido.paterno ||  item.apellido.materno === !item.apellido.materno ||item.edad === !item.edad) {
                         item.done =!it.done;
                         return true;
                     }
