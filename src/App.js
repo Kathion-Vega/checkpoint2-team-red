@@ -23,7 +23,7 @@ class App extends Component {
       <Provider store={store}>
           <BrowserRouter>
             <div>
-              <AppBar color="success"><NavBar></NavBar></AppBar>    
+              <AppBar color="primary" position="static"  ><NavBar></NavBar></AppBar>    
               <Redirect from="/" to="/Home" />
               <Switch>
                 <Route path="/Home" component={Home} />

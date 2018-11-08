@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import  { Button, AppBar, Toolbar, Typography, Paper, Table } from '@material-ui/core';
-import { connect } from 'react-redux';
-import { fetchDependants } from './../../../../state/actions/Dependants/DependantsActions/DependantsActions';
+// import { connect } from 'react-redux';
+// import { fetchDependants } from './../../../../state/actions/Dependants/DependantsActions/DependantsActions';
 import DependantsTable from './DependantsTable';
 import  { Link }  from 'react-router-dom';
 import NavBar from './../../../../NavBar';
@@ -33,17 +33,6 @@ class ListaDependants extends Component{
     }    
 }
 
-const mapDispatchToProps = () => {
-    return {
-        fetchDependants,
-    }
-}
 
 
-const mapStateToProps = (state) => {
-    return {
-        loading: state.loading
-    }
-}
-
-export default connect(mapDispatchToProps, mapStateToProps)(ListaDependants);
+export default ListaDependants;

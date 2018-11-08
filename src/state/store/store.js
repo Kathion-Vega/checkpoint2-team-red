@@ -1,5 +1,5 @@
 import { createStore, applyMiddleware, combineReducers } from 'redux';
-import UsersReducers from './../reducers/UsersReducers/UsersReducers';
+import UsersReducer from './../reducers/UsersReducers/UsersReducer';
 import DependantsReducers from './../reducers/DependantsReducers/DependantsReducers';
 import UserOnlyReducer from './../reducers/UsersReducers/UserOnlyReducer';
 import DependantOnlyReducer from './../reducers/DependantsReducers/DependantOnlyReducer';
@@ -9,10 +9,10 @@ import logger from 'redux-logger';
 const store = createStore(
     combineReducers(
         {
-            users: UsersReducers,
-            user: UserOnlyReducer,
-            dependants: DependantsReducers,
-            dependant: DependantOnlyReducer
+            users:UsersReducer,
+            UserOnlyReducer,
+            DependantsReducers,
+            DependantOnlyReducer
         }),applyMiddleware(thunk, logger));
     
     

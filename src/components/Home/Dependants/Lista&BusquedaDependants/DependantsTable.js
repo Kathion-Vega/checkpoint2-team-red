@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Table, TableBody, TableCell, TableHead, TableRow, Paper } from '@material-ui/core/';
-import { connect } from 'react-redux';
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core/';
+// import { connect } from 'react-redux';
 
 class DependantsTable extends Component{
     render() {

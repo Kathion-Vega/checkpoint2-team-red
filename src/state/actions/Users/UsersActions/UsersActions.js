@@ -9,8 +9,8 @@ const FetchUsers = () => {
     return async (dispatch) => {
         dispatch(LoadingUsers())
         try {
-            const response = await axios.get ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/rojo");
-            dispatch(SuccessFetchingUsers(response.data.data));
+            const response = await axios.post ('http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red');
+            dispatch(SuccessFetchingUsers(response.data));
         }
         catch (error) {
             dispatch(ErrorFetchingUsers(error));

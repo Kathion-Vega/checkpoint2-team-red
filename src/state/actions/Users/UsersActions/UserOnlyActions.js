@@ -21,8 +21,8 @@ const FindOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response = await axios.get ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/rojo");
-            dispatch(SuccessFindingUser(response.data.data));
+            const response = await axios.get ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users");
+            dispatch(SuccessFindingUser(response.data.users));
         }
         catch (error) {
             dispatch(ErrorFindingUser(error));
@@ -47,9 +47,9 @@ const AddOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response = await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/rojo"
+            const response = await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users"
                 );
-            dispatch(SuccessAddingUser(response.data.data));
+            dispatch(SuccessAddingUser(response.data.users));
         }
         catch (error) {
             dispatch(ErrorAddingUser(error));
@@ -76,9 +76,9 @@ const EditOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response =await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/rojo/usuario_id"
+            const response =await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users"
                 );
-            dispatch(SuccessEditingUser(response.data.dat));
+            dispatch(SuccessEditingUser(response.data.users));
         }
         catch (error) {
             dispatch(ErrorEditingUser(error));
@@ -102,9 +102,9 @@ const DeleteOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response =await axios.delete ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/rojo/usuario_id"
+            const response =await axios.delete ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users"
                 );
-            dispatch(SuccessDeletingUser(response.data.dat));
+            dispatch(SuccessDeletingUser(response.data.users));
         }
         catch (error) {
             dispatch(ErrorDeletingUser(error));
