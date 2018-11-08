@@ -1,31 +1,30 @@
 import React, { Component } from 'react';
 import  { Link }  from 'react-router-dom';
-import  { Table, Card, AppBar, Toolbar, InputBase, Typography, IconButton, Icon, Button } from '@material-ui/core';
+import  { Card, AppBar, Toolbar, InputBase, Typography, IconButton, Icon, Button } from '@material-ui/core';
 import {  connect } from 'react-redux';
-import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../state/actions/Users/UsersActions/UserOnlyActions';
-import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
-import NavBar from '../../../NavBar';
-import './BusquedaUser.scss';
+import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../../state/actions/Users/UsersActions/UserOnlyActions';
+import { fetchDependants } from './../../../../state/actions/Dependants/DependantsActions/DependantsActions';
+import NavBar from './../../../../NavBar';
+import './BusquedaDependant.scss';
 
 
 
-
-class BusquedaUser extends Component {
+class BusquedaDependant extends Component {
 
     render() {
         return (
-            <div className='busqueda_user'>
+            <div className='busqueda_dependant'>
                 <AppBar  position="static" color="success">
                     <NavBar />
                     <Link to="/Home" className="link"><Button>Home</Button></Link>    
    
                     <Toolbar>
                         <Typography className='title' variant="h6" color="inherit" noWrap>
-                            RED - Busqueda de Usuarios
+                            RED - Busqueda de Dependientes
                         </Typography>
                         <div className=''>
                             <div className=''>
-                                <IconButton onClick={this.handleAddUser}>
+                                <IconButton>
                                     <Icon>
                                         searchicon
                                     </Icon>
@@ -36,9 +35,9 @@ class BusquedaUser extends Component {
                     </Toolbar>    
                 </AppBar>
                 <Card>
-                    <Table>
-                        Resultado de la Busqueda
-                    </Table>
+
+                    Resultado de la Busqueda
+
                     <IconButton>
                             <Icon>
                                 edit
@@ -57,7 +56,7 @@ class BusquedaUser extends Component {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchUsers,
+        fetchDependants,
         loadingUser,
         addOnlyUser,
         findOnlyUser,
@@ -74,4 +73,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapDispatchToProps,mapStateToProps) (BusquedaUser);
+export default connect(mapDispatchToProps,mapStateToProps) (BusquedaDependant);

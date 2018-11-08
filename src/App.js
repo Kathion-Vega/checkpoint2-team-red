@@ -7,8 +7,8 @@ import ListaUsers from './components/Home/Users/ListaUsers';
 import BusquedaUser from './components/Home/Users/BusquedaUser';
 import AddUser from './components/Home/Users/AddUser';
 import DependantsMenu from './components/Home/Dependants/DependantsMenu';
-import ListaDependants from './components/Home/Dependants/Lista&BusquedaUser/ListaDependants';
-import BusquedaDependant from './components/Home/Dependants/BusquedaDependant';
+import ListaDependants from './components/Home/Dependants/Lista&BusquedaDependants/ListaDependants';
+import BusquedaDependant from './components/Home/Dependants/Lista&BusquedaDependants/BusquedaDependant';
 import AddDependant from './components/Home/Dependants/AddDependant';
 import './App.scss';
 import NavBar from './NavBar';
@@ -23,7 +23,7 @@ class App extends Component {
       <Provider store={store}>
           <BrowserRouter>
             <div>
-              <AppBar color="success"><NavBar></NavBar></AppBar>    
+              <AppBar color="primary" position="static"  ><NavBar></NavBar></AppBar>    
               <Redirect from="/" to="/Home" />
               <Switch>
                 <Route path="/Home" component={Home} />
