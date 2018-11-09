@@ -14,32 +14,37 @@ import { BrowserRouter as Router, Route} from 'react-router-dom'
 import { Provider } from 'react-redux';
 import store from './state/store/store';
 import NavBar from './NavBar';
+import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
+const theme = createMuiTheme({
+  typography: {
+    useNextVariants: true,
+  },
+});
 
 class App extends Component {
-  
-  
-  
   render() {
     return (
       <Provider store={store}>
-          <Router>
-            <div>
-              <NavBar></NavBar>    
-              <Redirect from="/" to="/Home" />
-              <Switch>
-                <Route path="/Home" component={Home} />
-                <Route exact path="/UsersMenu" render={() => <UsersMenu />} />
-                <Route path="/UsersMenu/GetUsers" render={() => <GetUsers />} />
-                <Route path="/UsersMenu/BusquedaUser" render={() => <BusquedaUser />} />
-                <Route path="/UsersMenu/AddUser" render={() => <AddUser />} />
-                <Route exact path="/DependantsMenu" render={() => <DependantsMenu />} />
-                <Route path="/DependantsMenu/ListaDependants" render={() => <ListaDependants />} />
-                <Route path="/DependantsMenu/BusquedaDependant" render={() => <BusquedaDependant />} />
-                <Route path="/DependantsMenu/AddDependant" render={() => <AddDependant />} />
-              </Switch>
-            </div>
-          </Router>
+        <MuiThemeProvider theme={theme}>
+            <Router>
+              <div>
+                <NavBar></NavBar>    
+                <Redirect from="/" to="/Home" />
+                <Switch>
+                  <Route path="/Home" component={Home} />
+                  <Route exact path="/UsersMenu" render={() => <UsersMenu />} />
+                  <Route path="/UsersMenu/UsersSubMenus/GetUsers" render={() => <GetUsers />} />
+                  <Route path="/UsersMenu/BusquedaUser" render={() => <BusquedaUser />} />
+                  <Route path="/UsersMenu/AddUser" render={() => <AddUser />} />
+                  <Route exact path="/DependantsMenu" render={() => <DependantsMenu />} />
+                  <Route path="/DependantsMenu/ListaDependants" render={() => <ListaDependants />} />
+                  <Route path="/DependantsMenu/BusquedaDependant" render={() => <BusquedaDependant />} />
+                  <Route path="/DependantsMenu/AddDependant" render={() => <AddDependant />} />
+                </Switch>
+              </div>
+            </Router>
+        </MuiThemeProvider>
       </Provider>
     );
   }

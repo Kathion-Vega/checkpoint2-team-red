@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, IconButton, Button, TextField, AppBar, Toolbar, Typography, Paper } from '@material-ui/core/';
 import { connect } from 'react-redux';
-import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../state/actions/UsersActions/UserOnlyActions';
-import { fetchUsers } from './../../../state/actions/UsersActions/UsersActions';
-import NavBar from '../../../NavBar';
-import './AddUser.scss';
+import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../../../state/actions/UsersActions/UserOnlyActions';
+import { fetchUsers } from './../../../../../state/actions/UsersActions/UsersActions';
+import NavBar from '../../../../../NavBar';
+
 
 
 

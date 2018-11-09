@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppBar, Toolbar, Typography} from '@material-ui/core';
 
 import './Home.scss';
-import UsersMenu from './UsersComponents/UsersMenu';
+import UsersMenu from './UsersComponents/UsersMenu/UsersMenu';
 import DependantsMenu from './Dependants/DependantsMenu';
 
 
@@ -10,7 +10,7 @@ class Home extends Component{
     render() {
         return (
             <div className="home-container">
-                <AppBar position="static" color="success">
+                <AppBar position="static" color="secondary">
                     
                     <Toolbar>
                         <Typography variant="h6" color="inherit">
