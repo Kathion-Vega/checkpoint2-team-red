@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, IconButton, Button, TextField, AppBar, Toolbar, Typography, Paper } from '@material-ui/core/';
 import { connect } from 'react-redux';
-import { addOnlyDependant  } from './../../../state/actions/Dependants/DependantsActions/DependantOnlyActions';
+import { addOnlyDependant  } from './../../../state/actions/DependantsActions/DependantOnlyActions';
 
 import NavBar from '../../../NavBar';
 import './AddDependant.scss';
