@@ -1,4 +1,4 @@
-import { LOADING_USER, ADD_USER, ADD_USER_ERROR, FIND_USER,  FIND_USER_ERROR, DELETE_USER, DELETE_USER_ERROR,  EDIT_USER, EDIT_USER_ERROR,  } from './../../actions/Users/UsersActions/UserOnlyActions';
+import { LOADING_USER, ADD_USER, ADD_USER_ERROR, FIND_USER,  FIND_USER_ERROR, DELETE_USER, DELETE_USER_ERROR,  EDIT_USER, EDIT_USER_ERROR,  } from './../../actions/UsersActions/UserOnlyActions';
 
 const initialState = {
     users: [],
