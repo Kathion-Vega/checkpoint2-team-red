@@ -1,4 +1,4 @@
-import { FETCH_USERS_ERROR, FETCH_USERS_SUCCESS, LOADING_USERS } from '../../actions/Users/UsersActions/UsersActions';
+import { FETCH_USERS_ERROR, FETCH_USERS_SUCCESS, LOADING_USERS } from '../../actions/UsersActions/UsersActions';
 const initialState = {
     // users
     users: [], 

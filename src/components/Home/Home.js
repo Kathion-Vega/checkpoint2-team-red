@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { AppBar, Toolbar, Typography} from '@material-ui/core';
 
 import './Home.scss';
-import UsersMenu from './Users/UsersMenu';
+import UsersMenu from './UsersComponents/UsersMenu';
 import DependantsMenu from './Dependants/DependantsMenu';
 
 

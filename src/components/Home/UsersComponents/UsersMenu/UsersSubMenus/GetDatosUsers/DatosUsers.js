@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import {  Table, TableBody, TableCell, TableHead, TableRow, } from '@material-ui/core/';
 import { connect } from 'react-redux';
 
-class TableUser extends Component {
+class DatosUsers extends Component {
     render() {
         return (
             <div className="">
@@ -41,4 +41,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect (mapStateToProps)(TableUser);
+export default connect (mapStateToProps)(DatosUsers);

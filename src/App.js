@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Switch, Redirect } from 'react-router-dom';
 import Home from './components/Home/Home';
-import UsersMenu from './components/Home/UsersComponents/UsersMenu';
-import ListaUsers from './components/Home/UsersComponents/ListaUsers';
-import BusquedaUser from './components/Home/UsersComponents/BusquedaUser';
-import AddUser from './components/Home/UsersComponents/AddUser';
+import UsersMenu from './components/Home/UsersComponents/UsersMenu/UsersMenu';
+import GetUsers from './components/Home/UsersComponents/UsersMenu/UsersSubMenus/GetUsers';
+import BusquedaUser from './components/Home/UsersComponents/UsersMenu/UsersSubMenus/BusquedaUser';
+import AddUser from './components/Home/UsersComponents/UsersMenu/UsersSubMenus/AddUser';
 import DependantsMenu from './components/Home/Dependants/DependantsMenu';
 import ListaDependants from './components/Home/Dependants/Lista&BusquedaDependants/ListaDependants';
 import BusquedaDependant from './components/Home/Dependants/Lista&BusquedaDependants/BusquedaDependant';
@@ -30,7 +30,7 @@ class App extends Component {
               <Switch>
                 <Route path="/Home" component={Home} />
                 <Route exact path="/UsersMenu" render={() => <UsersMenu />} />
-                <Route path="/UsersMenu/ListaUsers" render={() => <ListaUsers />} />
+                <Route path="/UsersMenu/GetUsers" render={() => <GetUsers />} />
                 <Route path="/UsersMenu/BusquedaUser" render={() => <BusquedaUser />} />
                 <Route path="/UsersMenu/AddUser" render={() => <AddUser />} />
                 <Route exact path="/DependantsMenu" render={() => <DependantsMenu />} />

@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { fetchUsers } from './../../../state/actions/UsersActions/UsersActions';
 import  { Link }  from 'react-router-dom';
 import NavBar from '../../../NavBar';
-import TableUser from './TableUser';
+import DatosUsers from './DatosUsers';
 
 class ListaUsers extends Component{
 
@@ -27,7 +27,7 @@ class ListaUsers extends Component{
                 <Paper> 
                     {/* <Button onClick={this.handleClickGetUsers}>Cargar userss</Button>                   */}
                     
-                    <TableUser></TableUser>
+                    <DatosUsers></DatosUsers>
                         
                     {/* {this.props.loading ? <h1>Cargando...</h1> : null}       */}
                                                           
