@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import  { Link }  from 'react-router-dom';
 import  { Card, AppBar, Toolbar, InputBase, Typography, IconButton, Icon, Button } from '@material-ui/core';
 import {  connect } from 'react-redux';
-import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../../state/actions/Users/UsersActions/UserOnlyActions';
-import { fetchDependants } from './../../../../state/actions/Dependants/DependantsActions/DependantsActions';
+import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../../state/actions/UsersActions/UserOnlyActions';
+import { fetchDependants } from './../../../../state/actions/DependantsActions/DependantsActions';
 import NavBar from './../../../../NavBar';
 import './BusquedaDependant.scss';
 

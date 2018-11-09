@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {  Button, AppBar, Toolbar, Typography, Paper } from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
+import { fetchUsers } from './../../../state/actions/UsersActions/UsersActions';
 import  { Link }  from 'react-router-dom';
 import NavBar from '../../../NavBar';
 import TableUser from './TableUser';
@@ -43,6 +43,7 @@ class ListaUsers extends Component{
 const mapDispatchToProps = (users) => {
     return {
         users,
+        fetchUsers,
     };
 }
 

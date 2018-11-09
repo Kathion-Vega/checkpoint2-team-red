@@ -1,4 +1,4 @@
-import {FETCH_DEPENDANTS_ERROR, FETCH_DEPENDANTS_SUCCESS, LOADING_DEPENDANTS } from './../../actions/Dependants/DependantsActions/DependantsActions';
+import {FETCH_DEPENDANTS_ERROR, FETCH_DEPENDANTS_SUCCESS, LOADING_DEPENDANTS } from './../../actions/DependantsActions/DependantsActions';
 const initialState = {
     dependants: [],
     loading: false,

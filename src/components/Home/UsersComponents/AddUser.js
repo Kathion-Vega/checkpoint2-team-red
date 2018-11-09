@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, IconButton, Button, TextField, AppBar, Toolbar, Typography, Paper } from '@material-ui/core/';
 import { connect } from 'react-redux';
-import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../state/actions/Users/UsersActions/UserOnlyActions';
-import { fetchUsers } from './../../../state/actions/Users/UsersActions/UsersActions';
+import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../state/actions/UsersActions/UserOnlyActions';
+import { fetchUsers } from './../../../state/actions/UsersActions/UsersActions';
 import NavBar from '../../../NavBar';
 import './AddUser.scss';
 
@@ -104,7 +104,7 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = (state) => {
     return {
         users: state.users,
-        user: state.user
+      
     }
 }
 

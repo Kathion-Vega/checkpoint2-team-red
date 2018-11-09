@@ -9,7 +9,7 @@ import logger from 'redux-logger';
 const store = createStore(
     combineReducers(
         {
-            users:UsersReducer,
+            UsersReducer,
             UserOnlyReducer,
             DependantsReducers,
             DependantOnlyReducer
