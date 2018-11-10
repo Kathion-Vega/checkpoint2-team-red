@@ -16,6 +16,7 @@ import store from './state/store/store';
 import NavBar from './NavBar';
 import { createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 
+
 const theme = createMuiTheme({
   typography: {
     useNextVariants: true,

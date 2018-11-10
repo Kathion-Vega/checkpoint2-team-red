@@ -29,7 +29,7 @@ class UsersMenu extends Component{
                 <Menu key={1} id="simple-menu" anchorEl={anchorEl} open={Boolean(anchorEl)} onClose={this.handleClose}>
                     <MenuItem><Link to = "/UsersMenu/GetUsers">Lista de Usuarios</Link></MenuItem>
                     <MenuItem><Link to = "/UsersMenu/BusquedaUser">Busqueda de Usuario</Link></MenuItem>
-                    <MenuItem><Link to = "/UsersMenu/AddUser">Agregar Usuario</Link></MenuItem>
+                    <MenuItem><Link to = "/UsersMenu/AddUser/">Agregar Usuario</Link></MenuItem>
                     <MenuItem onClick={this.handleClose}><Link to="/Home">Regresar</Link></MenuItem>
                 </Menu>                                                                                               
             </div>

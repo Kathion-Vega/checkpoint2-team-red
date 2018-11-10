@@ -16,7 +16,7 @@ class DatosUsers extends Component {
                         </TableRow>
                     </TableHead>
                     <TableBody>                      
-                       {this.props.users.users.map(user => {
+                       {this.props.users.map(user => {
                             return (
                                 <tr key ={user._id}>
                                     <td>{user.nombre}</td>

@@ -8,9 +8,9 @@ import DatosUsers from './GetDatosUsers/DatosUsers';
 
 class ListaUsers extends Component{
 
-// handleClickGetUsers = () => {
-//     this.props.fetchUsers();
-// }
+handleClickGetUsers = () => {
+    this.props.fetchUsers();
+}
 
     render () {
         return (
@@ -26,11 +26,11 @@ class ListaUsers extends Component{
                 </AppBar> 
                 <div>
                     <Paper> 
-                        {/* <Button onClick={this.handleClickGetUsers}>Cargar userss</Button>                   */}
+                        <Button onClick={this.handleClickGetUsers}>Cargar userss</Button>                  
                         
                         <DatosUsers></DatosUsers>
                             
-                        {/* {this.props.loading ? <h1>Cargando...</h1> : null}       */}
+                         {this.props.loading ? <h1>Cargando...</h1> : null}     
                                                             
                     </Paper>
                 </div>
