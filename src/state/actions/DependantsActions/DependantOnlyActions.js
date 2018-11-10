@@ -21,7 +21,7 @@ const FindOnlyDependant = () => {
     return async (dispatch) => {
         dispatch(LoadingDependant())
         try {
-            const response = await axios.get ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/rojo/dependiente_id");
+            const response = await axios.get ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/red/dependiente_id");
             dispatch(SuccessFindingDependant(response.data.data));
         }
         catch (error) {
@@ -47,7 +47,7 @@ const AddOnlyDependant = () => {
     return async (dispatch) => {
         dispatch(LoadingDependant())
         try {
-            const response = await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/rojo");
+            const response = await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/red");
             dispatch(SuccessAddingDependant(response.data.data));
         }
         catch (error) {
@@ -75,7 +75,7 @@ const EditOnlyDependant = () => {
     return async (dispatch) => {
         dispatch(LoadingDependant())
         try {
-            const response =await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/rojo/dependiente_id");
+            const response =await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/red/dependiente_id");
             dispatch(SuccessEditingDependant(response.data.dat));
         }
         catch (error) {
@@ -100,7 +100,7 @@ const DeleteOnlyDependant = () => {
     return async (dispatch) => {
         dispatch(LoadingDependant())
         try {
-            const response =await axios.delete ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/rojo/dependiente_id");
+            const response =await axios.delete ("http://checkpoint2-grupo3.herokuapp.com/api/dependientes/red/dependiente_id");
             dispatch(SuccessDeletingDependant(response.data.dat));
         }
         catch (error) {

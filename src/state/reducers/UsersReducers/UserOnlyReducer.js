@@ -15,17 +15,17 @@ const UserOnlyReducer = ( state = initialState, action) => {
             }
         
         case ADD_USER:
-            let newUser = {
-                id: state.users.lenght + 1,
-                nombre: action.nombre,
-                paterno: action.apellidos.paterno,
-                materno: action.apellidos.materno,
-                edad: action.edad 
-            }
             return {
                 ...state,
-                users: state.users.concat(newUser)
-            }
+                users: state.users.concat(
+                   {
+                        usuario_id: state.users.lenght + 1,
+                        nombre: action.nombre,
+                        paterno: action.apellidos.paterno,
+                        materno: action.apellidos.materno,
+                        edad: action.edad 
+                    }),
+            };
 
         case ADD_USER_ERROR:
             return {
@@ -37,10 +37,7 @@ const UserOnlyReducer = ( state = initialState, action) => {
         case FIND_USER:
             let busquedaUsers = state.users.slice();
             let resultado = busquedaUsers.find((item) => {
-                if (item.id === action.id) {
-                    item.done = !item.done;
-                    return true;
-                } else if (item.nombre === action.nombre) {
+                if (item.nombre === action.nombre) {
                     item.done = !item.done;
                     return true;
                 } else if (item.apellidos.paterno === action.apellidos.paterno) {
@@ -81,7 +78,7 @@ const UserOnlyReducer = ( state = initialState, action) => {
 
             case EDIT_USER: 
                 let cambios = {
-                    id: action.id,
+                    usuario_id: action.id,
                     nombrename: action.nombre,
                     paterno: action.apellido.paterno,
                     materno: action.apellido.materno,
@@ -89,7 +86,7 @@ const UserOnlyReducer = ( state = initialState, action) => {
                 }
                 cambios = state.users.slice();
                 for (let item of cambios) {
-                    if (item.id === !item.done || item.nombre === !item.nombre || item.apellido.paterno === !item.apellido.paterno ||  item.apellido.materno === !item.apellido.materno ||item.edad === !item.edad) {
+                    if (item.nombre === !item.nombre || item.apellido.paterno === !item.apellido.paterno ||  item.apellido.materno === !item.apellido.materno ||item.edad === !item.edad) {
                         item.done =!it.done;
                         return true;
                     }
@@ -105,6 +102,7 @@ const UserOnlyReducer = ( state = initialState, action) => {
                     loading: false,
                     errorMessage: action.error
                 }
+           
         
             default:
             return state;

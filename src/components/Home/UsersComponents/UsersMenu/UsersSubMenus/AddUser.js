@@ -1,19 +1,74 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Icon, IconButton, Button, TextField, AppBar, Toolbar, Typography, Paper } from '@material-ui/core/';
+import {  IconButton, Icon, Snackbar, Button, TextField, AppBar, Toolbar, Typography, Paper } from '@material-ui/core/';
 import { connect } from 'react-redux';
-import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../state/actions/UsersActions/UserOnlyActions';
-import { fetchUsers } from './../../../state/actions/UsersActions/UsersActions';
-import NavBar from '../../../NavBar';
-import './AddUser.scss';
+import { addOnlyUser, editOnlyUser } from './../../../../../state/actions/UsersActions/UserOnlyActions';
+// import { fetchUsers } from './../../../../../state/actions/UsersActions/UsersActions';
+import NavBar from '../../../../../NavBar';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
 
-
+const styles = theme => ({
+    close: {
+      padding: theme.spacing.unit / 2,
+    },
+  });
 
 class AddUser extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            open: false,
+            userInput: {
+                nombre: "",
+                apellidos: {
+                    paterno: "",
+                    materno: ""
+                },
+                edad: ""
+            }
+        };
+
+        this.handleUserInputChange = this.handleUserInputChange.bind(this);
+        this.handleAddOnlyUser = this.handleAddOnlyUser.bind(this);
+
+    }
+
+
+    handleUserInputChange = (e) => {
+        this.setState({userInput: e.target.value});
+        this.setState({ userInput:{ } });
+    }
+
+    handleClick = () => {
+        this.setState({ open: true });
+    };
+
+    handleClose = (event, reason) => {
+        if (reason === 'clickaway') {
+            return;
+        }
+
+        this.setState({ open: false });
+    };
+
+      
+    handleAddOnlyUser = (event) => {
+        this.props.addOnlyUser(this.state.userInput);
+        this.setState({ userInput:{ } });
+        alert('Registro de Nuevo Usuario '+ this.state);
+        event.preventDefault();
+    }
+
+
+
     render () {
+        const { classes } = this.props;
+        
         return (
+            
             <div className="">
-                <AppBar position="static" color="success">
+                <AppBar position="static" color="secondary">
                     <NavBar />
                     <Link to="/Home" className="link"><Button>Home</Button></Link>    
    
@@ -21,17 +76,40 @@ class AddUser extends Component {
                         <Typography className='title' variant="h6" color="inherit" noWrap>
                             RED - Agregar Usuario
                         </Typography>
+                        <div>
+                            
+                            <Button>Agregar Otro Usuario</Button>
+                            
+                        </div>
                     </Toolbar>
                     
                 </AppBar>
                 <Paper>
                     <div>    
-                        <form className="container" noValidate autoComplete="off">
+                        <form onChange={this.handleUserInputChange} className="container" noValidate autoComplete="off">
+                            
                             <TextField
                             required
                             id="outlined-required"
-                            label="Required"
-                            defaultValue="ID"
+                            label="Nombre"
+                            value={this.state.userInput.nombre}
+                            onChange={this.handleUserInputChange}
+                            onReset={this.handleReset}
+                            className="textField"
+                            margin="normal"
+                            variant="outlined"
+                            />
+                        
+                            
+                          
+                            
+
+                            <TextField
+                            required
+                            id="outlined-required"
+                            label="Apellido Paterno"
+                            value={this.state.userInput.paterno}
+                            onChange={this.handleUserInputChange}
                             className="textField"
                             margin="normal"
                             variant="outlined"
@@ -40,8 +118,9 @@ class AddUser extends Component {
                             <TextField
                             required
                             id="outlined-required"
-                            label="Required"
-                            defaultValue="Nombre"
+                            label="Apellido Materno"
+                            value={this.state.userInput.materno}
+                            onChange={this.handleUserInputChange}
                             className="textField"
                             margin="normal"
                             variant="outlined"
@@ -50,53 +129,67 @@ class AddUser extends Component {
                             <TextField
                             required
                             id="outlined-required"
-                            label="Required"
-                            defaultValue="Apellido Paterno"
-                            className="textField"
-                            margin="normal"
-                            variant="outlined"
-                            /> 
-
-                            <TextField
-                            required
-                            id="outlined-required"
-                            label="Required"
-                            defaultValue="Apellido Materno"
+                            label="Edad"
+                            value={this.state.userInput.edad}
+                            onChange={this.handleUserInputChange}
                             className="textField"
                             margin="normal"
                             variant="outlined"
                             />
-
-                            <TextField
-                            required
-                            id="outlined-required"
-                            label="Required"
-                            defaultValue="Edad"
-                            className="textField"
-                            margin="normal"
-                            variant="outlined"
-                            />
+                            
                         </form>
-                        <IconButton>
-                            <Icon>
+                    </div>
+                    <div className="">     
+                        <IconButton onClick={this.handleClick} type="submit"  >
+                            <Icon >
                                 add
                             </Icon>
                         </IconButton>
-                    </div> 
+                        <Snackbar
+                        anchorOrigin={{
+                            vertical: 'bottom',
+                            horizontal: 'left',
+                        }}
+                        open={this.state.open}
+                        autoHideDuration={6000}
+                        onClose={this.handleClose}
+                        ContentProps={{
+                            'aria-describedby': 'message-id',
+                        }}
+                        message={<span id="message-id">¿Desea agregar este usuario?</span>}
+                        action={[
+                            <Button key="undo" color="secondary" size="small" onClick={this.handleAddOnlyUser}
+                            type="submit" onChange={(e)=>this.handleUserInputChange(e)}>
+                                AGREGAR
+                            </Button>,
+                            <Button key="revise" color="secondary" size="small" onClick={this.handleClose}>
+                                Revisar y editar
+                            </Button>,
+                            
+                            <IconButton
+                            key="close"
+                            aria-label="Close"
+                            color="inherit"
+                            className={classes.close}
+                            onClick={this.handleClose}
+                            >
+                                <Icon>close</Icon>
+                            </IconButton>,
+                        ]}
+                        />
+                    </div>
+                    
                 </Paper>
             </div>        
-        )
+        );
     }
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchUsers,
-        loadingUser,
         addOnlyUser,
-        findOnlyUser,
         editOnlyUser,
-        deleteOnlyUser
+      
     }    
 }
 
@@ -108,4 +201,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapDispatchToProps,mapStateToProps) (AddUser);
+AddUser.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };
+
+export default withStyles(styles) (connect(mapDispatchToProps,mapStateToProps) (AddUser));

@@ -21,7 +21,7 @@ const FindOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response = await axios.get ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users");
+            const response = await axios.get ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/usuarios_id");
             dispatch(SuccessFindingUser(response.data.users));
         }
         catch (error) {
@@ -47,9 +47,9 @@ const AddOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response = await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users"
+            const response = await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/"
                 );
-            dispatch(SuccessAddingUser(response.data.users));
+            dispatch(SuccessAddingUser(response.data));
         }
         catch (error) {
             dispatch(ErrorAddingUser(error));
@@ -76,7 +76,7 @@ const EditOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response =await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users"
+            const response =await axios.post ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/usuario_id/"
                 );
             dispatch(SuccessEditingUser(response.data.users));
         }
@@ -102,7 +102,7 @@ const DeleteOnlyUser = () => {
     return async (dispatch) => {
         dispatch(LoadingUser())
         try {
-            const response =await axios.delete ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/users/users"
+            const response =await axios.delete ("http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/usuario_id/"
                 );
             dispatch(SuccessDeletingUser(response.data.users));
         }

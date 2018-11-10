@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import {  Button, AppBar, Toolbar, Typography, Paper } from '@material-ui/core/Button';
 import { connect } from 'react-redux';
-import { fetchUsers } from './../../../state/actions/UsersActions/UsersActions';
+import { fetchUsers } from './../../../../../state/actions/UsersActions/UsersActions';
 import  { Link }  from 'react-router-dom';
-import NavBar from '../../../NavBar';
-import DatosUsers from './DatosUsers';
+import NavBar from '../../../../../NavBar';
+import DatosUsers from './GetDatosUsers/DatosUsers';
 
 class ListaUsers extends Component{
 
-// handleClickGetUsers = () => {
-//     this.props.fetchUsers();
-// }
+handleClickGetUsers = () => {
+    this.props.fetchUsers();
+}
 
     render () {
         return (
@@ -24,14 +24,16 @@ class ListaUsers extends Component{
                         </Typography>
                     </Toolbar>  
                 </AppBar> 
-                <Paper> 
-                    {/* <Button onClick={this.handleClickGetUsers}>Cargar userss</Button>                   */}
-                    
-                    <DatosUsers></DatosUsers>
+                <div>
+                    <Paper> 
+                        <Button onClick={this.handleClickGetUsers}>Cargar userss</Button>                  
                         
-                    {/* {this.props.loading ? <h1>Cargando...</h1> : null}       */}
-                                                          
-                </Paper>
+                        <DatosUsers></DatosUsers>
+                            
+                         {this.props.loading ? <h1>Cargando...</h1> : null}     
+                                                            
+                    </Paper>
+                </div>
             </div> 
         )
     }    

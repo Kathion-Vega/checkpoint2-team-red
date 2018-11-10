@@ -16,18 +16,18 @@ class DatosUsers extends Component {
                         </TableRow>
                     </TableHead>
                     <TableBody>                      
-                        {this.props.users.users.map(user => {
-                    return (
-                        <tr key ={user._id}>
-                            <td>{user.nombre}</td>
-                            <td>{user.apellidos.paterno}</td>
-                            <td>{user.apellidos.materno}</td>
-                            <td>{user.edad}</td>
-                        </tr>
-                    )
-                        })
+                       {this.props.users.map(user => {
+                            return (
+                                <tr key ={user._id}>
+                                    <td>{user.nombre}</td>
+                                    <td>{user.apellidos.paterno}</td>
+                                    <td>{user.apellidos.materno}</td>
+                                    <td>{user.edad}</td>
+                                </tr>
+                                )
+                            })
 
-                    }
+                        }
                     </TableBody>
                 </Table> 
             </div>

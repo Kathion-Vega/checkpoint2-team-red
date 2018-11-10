@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 import  { Link }  from 'react-router-dom';
 import  { Table, Card, AppBar, Toolbar, InputBase, Typography, IconButton, Icon, Button } from '@material-ui/core';
 import {  connect } from 'react-redux';
-import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../state/actions/UsersActions/UserOnlyActions';
-import { fetchUsers } from './../../../state/actions/UsersActions/UsersActions';
-import NavBar from '../../../NavBar';
-import './BusquedaUser.scss';
+import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../../../state/actions/UsersActions/UserOnlyActions';
+import { fetchUsers } from './../../../../../state/actions/UsersActions/UsersActions';
+import NavBar from '../../../../../NavBar';
+
 
 
 
