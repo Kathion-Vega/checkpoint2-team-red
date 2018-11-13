@@ -58,6 +58,7 @@ class AddUser extends Component {
         this.setState({ userInput:{ } });
         alert('Registro de Nuevo Usuario '+ this.state);
         event.preventDefault();
+        this.userInput(this.props.users.map('http://checkpoint2-grupo3.herokuapp.com/api/usuarios/red/usuarios_id'));
     }
 
 
@@ -158,7 +159,7 @@ class AddUser extends Component {
                         }}
                         message={<span id="message-id">¿Desea agregar este usuario?</span>}
                         action={[
-                            <Button key="undo" color="secondary" size="small" onClick={this.handleAddOnlyUser}
+                            <Button key="undo" color="secondary" size="small" onClick={(e)=>this.handleAddOnlyUser(e)}
                             type="submit" onChange={(e)=>this.handleUserInputChange(e)}>
                                 AGREGAR
                             </Button>,

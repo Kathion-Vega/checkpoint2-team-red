@@ -7,9 +7,31 @@ import { addOnlyDependant  } from './../../../state/actions/DependantsActions/De
 import NavBar from '../../../NavBar';
 import './AddDependant.scss';
 
+class AddDependant extends Component {    
+    state ={
+        nombre_completo: '',
+        dependencia: '',
+        edad: '',
+        id_usuario: ''
+    }
+
+    handleInputChange = e => {
+        this.setState({
+            [e.target.name]: e.target.value
+        });
+    };
 
 
-class AddDependant extends Component {
+    handleReset = () => {
+        this.setState({
+            nombre_completo: '',
+            dependencia: '',
+            edad: '',
+            id_usuario: ''
+        });
+    };
+    
+
     render () {
         return (
             <div className="container">
@@ -26,52 +48,77 @@ class AddDependant extends Component {
                 </AppBar>
                 <Paper>
                     <div>    
-                        <form className="container" noValidate autoComplete="off">
-                            <TextField
-                            required
-                            id="outlined-required"
-                            label="Required"
-                            defaultValue="Nombre Completo"
-                            className="textField"
-                            margin="normal"
-                            variant="outlined"
-                            /> 
+                        <form onSubmit={ this.handleSubmit} className="container" noValidate autoComplete="off">
+                            <div>    
+                                <TextField
+                                required
+                                id="outlined-required"
+                                label="Required"
+                                defaultValue="Nombre Completo"
+                                className="textField"
+                                margin="normal"
+                                variant="outlined"
+                                type="text"
+                                onChange={ this.handleInputChange }
+                                value={ this.state.nombre_completo }
+                                />
+                            </div> 
+                            <div> 
+                                <TextField
+                                required
+                                id="outlined-required"
+                                label="Required"
+                                defaultValue="Dependencia"
+                                className="textField"
+                                margin="normal"
+                                variant="outlined"
+                                onChange={ this.handleInputChange }
+                                value={ this.state.dependencia }
+                                />
+                            </div>
+                            <div>   
+                                <TextField
+                                required
+                                id="outlined-required"
+                                label="Required"
+                                defaultValue="Edad"
+                                className="textField"
+                                margin="normal"
+                                variant="outlined"
+                                onChange={ this.handleInputChange }
+                                value={ this.state.edad }
+                                /> 
+                            </div>
+                            <div>
+                                <TextField
+                                required
+                                id="outlined-required"
+                                label="Required"
+                                defaultValue="Usuario"
+                                className="textField"
+                                margin="normal"
+                                variant="outlined"
+                                onChange={ this.handleInputChange }
+                                value={ this.state.id_usuario}
 
-                            <TextField
-                            required
-                            id="outlined-required"
-                            label="Required"
-                            defaultValue="Dependencia"
-                            className="textField"
-                            margin="normal"
-                            variant="outlined"
-                            />
-
-                            <TextField
-                            required
-                            id="outlined-required"
-                            label="Required"
-                            defaultValue="Edad"
-                            className="textField"
-                            margin="normal"
-                            variant="outlined"
-                            /> 
-
-                            <TextField
-                            required
-                            id="outlined-required"
-                            label="Required"
-                            defaultValue="Usuario"
-                            className="textField"
-                            margin="normal"
-                            variant="outlined"
-                            />
+                                />
+                            </div>
+                            <div>
+                                <IconButton type="submit" className="btn btn-primary">
+                                    <Icon>
+                                        add
+                                    </Icon>
+                                </IconButton>
+                            </div>
+                            <div>
+                                <IconButton type="button" className="btn btn-warning"onClick={ this.handleReset}>
+                                    <Icon>
+                                        add
+                                    </Icon>
+                                </IconButton>
+                            </div>
                         </form>
-                        <IconButton>
-                            <Icon>
-                                add
-                            </Icon>
-                        </IconButton>
+                        
                     </div> 
                 </Paper>
             </div>        
@@ -95,4 +142,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapDispatchToProps,mapStateToProps) (AddDependant);
+export default connect(mapDispatchToProps,mapStateToProps)(AddDependant);
