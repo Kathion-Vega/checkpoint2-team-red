@@ -11,7 +11,7 @@ import DependantsMenu from './Dependants/DependantsMenu';
 import ListaDependants from './Dependants/Lista&BusquedaDependants/ListaDependants';
 import BusquedaDependant from './Dependants/Lista&BusquedaDependants/BusquedaDependant';
 import AddDependant from './Dependants/AddDependant';
-import './App.scss';
+
 
 
 import store from '../../state/store/store';

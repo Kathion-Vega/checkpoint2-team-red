@@ -7,3 +7,7 @@
   flex-direction: column;
   box-sizing: border-box
 }
+
+.preloader {
+  flex-grow: 1;
+}
