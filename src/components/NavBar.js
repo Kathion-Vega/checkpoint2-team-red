@@ -31,7 +31,7 @@ class NavBar extends Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose} >
           <MenuItem onClick={this.handleClose}>
-            <Link to="" key={2} className="link">Menu de Dependientes</Link>
+            <Link to="/DependientesLista" key={2} className="link">Menu de Dependientes</Link>
           </MenuItem>
         </Menu>
       </div>

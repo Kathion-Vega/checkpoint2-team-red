@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 
 import UsersReducer from './../reducers/UsersReducers/UsersReducer';
-import dependantsReducers from './../reducers/dependantsReducer/dependantsReducer';
+import dependantReducer from './../reducers/dependantReducer/dependantReducer';
 import UserOnlyReducer from './../reducers/UsersReducers/UserOnlyReducer';
 import DependantOnlyReducer from './../reducers/DependantsReducers/DependantOnlyReducer';
 
@@ -9,6 +9,6 @@ import DependantOnlyReducer from './../reducers/DependantsReducers/DependantOnly
 export default combineReducers({
     UsersReducer,
     UserOnlyReducer,
-    dependantsReducer,
+    dependantReducer,
     DependantOnlyReducer
 });

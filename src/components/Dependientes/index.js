@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import * as dependantsActions from '../../actions/dependantsActions';
 import LinearProgress from '@material-ui/core/LinearProgress';
 
-class Dependientes extends Component {
+class DependientesLista extends Component {
 
 	componentDidMount() {
 		this.props.traerDependientes();
@@ -33,6 +33,9 @@ class Dependientes extends Component {
 				{ this.desplegar() }
 				</ul>
 			</div>
+			<Link to ="/home">
+				Home
+			</Link>
 		);
 	}
 }
@@ -41,4 +44,4 @@ const mapStateToProps = ({ dependantsReducer }) => {
 	return dependantsReducer;
 }
 
-export default connect(mapStateToProps, dependantsActions)(Dependientes);
+export default connect(mapStateToProps, dependantsActions)(DependientesLista);

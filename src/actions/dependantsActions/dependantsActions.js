@@ -5,7 +5,7 @@ export const traerDependientess = () => async (dispatch) => {
 	dispatch({ type: 'llamar_dependiente' });
 
 	try {
-		const response = await axios.get('https://jsonplaceholder.typicode.com/users');
+		const response = await axios.get('http://checkpoint2-grupo3.herokuapp.com/api/dependientes/red/dependiente_id');
 		dispatch({ type: 'dependiente_exitoso', payload: response.data });
 	}
 	catch(error) {
