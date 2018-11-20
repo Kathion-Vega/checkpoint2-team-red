@@ -3,7 +3,7 @@ import { Table, TableBody, TableHead, TableRow, TableCell, Button, AppBar, Toolb
 import { connect } from 'react-redux';
 import { fetchUsers } from './../../../../../state/actions/UsersActions/UsersActions';
 import  { Link }  from 'react-router-dom';
-import NavBar from '../../../../../NavBar';
+import NavBar from '../../../NavBar';
 import DatosUsers from './GetDatosUsers/DatosUsers';
 
 class ListaUsers extends Component{

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-// import './NavBar.scss';
 import {Menu, MenuItem } from '@material-ui/core/';
 
 class NavBar extends Component {
@@ -32,7 +31,7 @@ class NavBar extends Component {
           open={Boolean(anchorEl)}
           onClose={this.handleClose} >
           <MenuItem onClick={this.handleClose}>
-            <Link to="/DependantsMenu" key={2} className="link">Menu de Dependientes</Link>
+            <Link to="" key={2} className="link">Menu de Dependientes</Link>
           </MenuItem>
         </Menu>
       </div>

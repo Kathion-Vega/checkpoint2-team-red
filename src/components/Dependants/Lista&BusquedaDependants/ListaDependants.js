@@ -4,7 +4,7 @@ import  { Button, AppBar, Toolbar, Typography, Paper, Table } from '@material-ui
 // import { fetchDependants } from './../../../../state/actions/Dependants/DependantsActions/DependantsActions';
 import DependantsTable from './DependantsTable';
 import  { Link }  from 'react-router-dom';
-import NavBar from './../../../../NavBar';
+import NavBar from '../../NavBar';
 
 class ListaDependants extends Component{
     

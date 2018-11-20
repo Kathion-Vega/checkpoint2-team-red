@@ -4,7 +4,7 @@ import  { Table, Card, AppBar, Toolbar, InputBase, Typography, IconButton, Icon,
 import {  connect } from 'react-redux';
 import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../../../state/actions/UsersActions/UserOnlyActions';
 import { fetchUsers } from './../../../../../state/actions/UsersActions/UsersActions';
-import NavBar from '../../../../../NavBar';
+import NavBar from '../../../NavBar';
 
 
 

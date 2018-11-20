@@ -4,7 +4,7 @@ import  { Card, AppBar, Toolbar, InputBase, Typography, IconButton, Icon, Button
 import {  connect } from 'react-redux';
 import { loadingUser,addOnlyUser, findOnlyUser, editOnlyUser, deleteOnlyUser } from './../../../../state/actions/UsersActions/UserOnlyActions';
 import { fetchDependants } from './../../../../state/actions/DependantsActions/DependantsActions';
-import NavBar from './../../../../NavBar';
+import NavBar from '../../NavBar';
 import './BusquedaDependant.scss';
 
 

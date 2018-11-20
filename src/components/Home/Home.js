@@ -1,31 +1,21 @@
-import React, { Component } from 'react';
-import { AppBar, Toolbar, Typography} from '@material-ui/core';
+import React from 'react';
+import { AppBar } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
-import './Home.scss';
-import UsersMenu from './UsersComponents/UsersMenu/UsersMenu';
-import DependantsMenu from './Dependants/DependantsMenu';
-
-
-class Home extends Component{
-    render() {
-        return (
-            <div className="home-container">
-                <AppBar position="static" color="secondary">
-                    
-                    <Toolbar>
-                        <Typography variant="h6" color="inherit">
-                            RED
-                        </Typography>    
-                        <UsersMenu></UsersMenu>
-                        <DependantsMenu></DependantsMenu>
-                    </Toolbar>
-                    
-                </AppBar>        
-                        
-            </div>
-        )
-    }
-}
-
+const Home = (props) => (
+	<AppBar className="home">
+		<li>
+			<Link to='/UsersMenu'>
+				Tarjetas
+			</Link>
+		</li>
+		<li>
+			<Link to='/DependantsMenu'>
+				Modal
+			</Link>
+		</li>
+	</AppBar>
+);
 
 export default Home;
+

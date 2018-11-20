@@ -4,7 +4,7 @@ import { Icon, IconButton, Button, TextField, AppBar, Toolbar, Typography, Paper
 import { connect } from 'react-redux';
 import { addOnlyDependant  } from './../../../state/actions/DependantsActions/DependantOnlyActions';
 
-import NavBar from '../../../NavBar';
+import NavBar from '../NavBar';
 import './AddDependant.scss';
 
 class AddDependant extends Component {    

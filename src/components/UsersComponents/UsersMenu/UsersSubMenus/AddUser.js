@@ -4,7 +4,7 @@ import {  IconButton, Icon, Snackbar, Button, TextField, AppBar, Toolbar, Typogr
 import { connect } from 'react-redux';
 import { addOnlyUser, editOnlyUser } from './../../../../../state/actions/UsersActions/UserOnlyActions';
 // import { fetchUsers } from './../../../../../state/actions/UsersActions/UsersActions';
-import NavBar from '../../../../../NavBar';
+import NavBar from '../../../NavBar';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 
