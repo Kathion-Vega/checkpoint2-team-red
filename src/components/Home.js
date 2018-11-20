@@ -5,12 +5,12 @@ import { Link } from 'react-router-dom';
 const Home = (props) => (
 	<AppBar className="home">
 		<li>
-			<Link to='/UsersMenu'>
+			<Link to='/UsersComponents/UsersMenu'>
 				Tarjetas
 			</Link>
 		</li>
 		<li>
-			<Link to='/DependientesLista'>
+			<Link to='/Dependientes/DependientesLista'>
 				Modal
 			</Link>
 		</li>

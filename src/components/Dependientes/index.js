@@ -33,7 +33,7 @@ class DependientesLista extends Component {
 				{ this.desplegar() }
 				</ul>
 			</div>
-			<Link to ="/home">
+			<Link to ="/UsersMenu">
 				Home
 			</Link>
 		);

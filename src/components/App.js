@@ -2,10 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route} from 'react-router-dom';
 
 import Home from './Home';
-import UsersMenu from './UsersComponents/UsersMenu';
-import GetUsers from './UsersComponents/UsersMenu/GetUsers';
-import BusquedaUser from './UsersComponents/UsersMenu/BusquedaUser';
-import AddUser from './UsersComponents/UsersMenu/AddUser';
+import UsersComponents from './UsersComponents/UsersComponents';
+import GetUsers from './UsersComponents/UsersComponents/GetUsers';
+import BusquedaUser from './UsersComponents/UsersComponents/BusquedaUser';
+import AddUser from './UsersComponents/UsersComponents/AddUser';
 import Dependientes from './Dependientes/Dependientes';
 import ListaDependants from './Dependants/Lista&BusquedaDependants/ListaDependants';
 import BusquedaDependant from './Dependants/Lista&BusquedaDependants/BusquedaDependant';
@@ -21,14 +21,14 @@ const Red = (props) => (
         <NavBar />
         <br />   
         <Route exact path="/Home" component={Home} />
-        <Route exact path="/UsersMenu" component={UsersMenu} />
-        <Route exact path="/UsersMenu/UsersSubMenus/GetUsers" component={GetUsers} />
-        <Route exact path="/UsersMenu/BusquedaUser" component={BusquedaUser} />
-        <Route exact path="/UsersMenu/AddUser" component={AddUser} />
-        <Route exact path="/DependientesLista" component={DependientesLista} />
-        {/* <Route exact path="/DependantsMenu/ListaDependants" component={ListaDependants} /> */}
-        {/* <Route exact path="/DependantsMenu/BusquedaDependant" component={BusquedaDependant} />
-        <Route exact path="/DependantsMenu/AddDependant" component={AddDependant} /> */}
+        <Route exact path="/UsersComponents/UsersMenu" component={UsersMenu} />
+        <Route exact path="/UsersComponents/GetUsers" component={GetUsers} />
+        <Route exact path="/UsersComponents/BusquedaUser" component={BusquedaUser} />
+        <Route exact path="/UsersComponents/AddUser" component={AddUser} />
+        <Route exact path="/Dependientes/DependientesLista" component={DependientesLista} />
+        {/* <Route exact path="/DependantsComponents/ListaDependants" component={ListaDependants} /> */}
+        {/* <Route exact path="/DependantsComponents/BusquedaDependant" component={BusquedaDependant} />
+        <Route exact path="/DependantsComponents/AddDependant" component={AddDependant} /> */}
             
       </div>  
     </BrowserRouter> 
